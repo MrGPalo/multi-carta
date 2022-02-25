@@ -1,0 +1,25 @@
+{
+  "name": "multi-carta",
+  "version": "1.0.0",
+  "description": "---\r El plan es tener una carta por preferencias alimenticias básicas (vegano, vegetariano, etc) luego preguntará por afecciones particulares como intolerancia a la lactosa, celiaco, etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrGPalo/multi-carta.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrGPalo/multi-carta/issues"
+  },
+  "homepage": "https://github.com/MrGPalo/multi-carta#readme",
+  "dependencies": {
+    "eslint": "^8.9.0",
+    "lerna": "^4.0.0",
+    "next": "^12.1.0",
+    "typescript": "^4.5.5"
+  }
+}
