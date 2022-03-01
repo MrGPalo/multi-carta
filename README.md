@@ -15,13 +15,12 @@ Como bonus me gustaría incorporar una sección dentro del perfil de usuario en 
 ```yaml
 -Usuario
 	- name: String
-	- food-preferences: String
 	- zip: Number
+	- food-preferences: String
 	- allergies: Array(String)
-	-intolerance: Array(String)
+	- intolerance: Array(String)
 ```
 
 ## API
 ---
 En desarrollo
-
