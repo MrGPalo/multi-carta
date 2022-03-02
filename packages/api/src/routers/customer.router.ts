@@ -1,5 +1,5 @@
 import { FastifyPluginAsync, FastifyRequest, FastifyReply } from 'fastify';
-import { User } from "../models/User.model";
+import { Customer } from "../models/Customer.model";
 
 type Myrequest = FastifyRequest<{
   Body: { name: string; quantity: string };

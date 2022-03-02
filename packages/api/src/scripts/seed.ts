@@ -1,28 +1,43 @@
 import { conectDB } from '../lib/db';
-import { Ingredient } from '../models/Ingredient.model';
+import { Restaurant } from '../models/Restaurant.model';
 
 (async () => {
   const { close } = await conectDB();
   try {
-    await Ingredient.collection.drop();
+    await Restaurant.collection.drop();
   } catch (error) {
-    console.log('There are no ingredients to drop from db');
+    console.log('There are no Restaurants to drop from db');
   }
 
-  const recipe = [
-    { apples: '1kg' },
-    { flour: '2cups' },
-    { butter: '3spoons' },
-    { eggs: '6uds' },
-    { milk: '1l' },
+  const restaurant = [
+    {
+      name: 'Core Restaurant',
+      email: 'restaurant@example.com',
+      adress: 'Calle Alegria, 23',
+      url: 'www.example.com/',
+      foodType: ['Vegan', 'Regular'],
+      zip: 28000,
+    },
+    {
+      name: 'Tester Restaurant',
+      email: 'restaurant_tester@example.com',
+      adress: 'Calle Ira, 23',
+      url: 'www.example_tester.com/',
+      foodType: ['Regular'],
+      zip: 28001,
+    },
   ];
 
   await Promise.all(
-    recipe.map(async (ing) => {
-      await Ingredient.create({
-        name: Object.keys(ing)[0],
-        quantity: Object.values(ing)[0],
-      }).then((e) => console.log(`🍊Create ingredient ${e.name}`));
+    restaurant.map(async (rest) => {
+      console.log(Object.keys(rest)[0]);
+      await Restaurant.create({
+        name: rest.name,
+        email: rest.email,
+        adress: rest.adress,
+        foodType: rest.foodType,
+        zip: rest.zip,
+      }).then((e) => console.log(`Create Restaurants ${e.name}`));
     }),
   );
 

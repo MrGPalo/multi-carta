@@ -2,7 +2,7 @@ import { FastifyPluginAsync } from 'fastify';
 import fastifyCors from 'fastify-cors';
 import { conectDB } from './lib/db';
 import { main_router } from './routers/main.router';
-import { users_router } from './routers/user.router';
+import { users_router } from './routers/customer.router';
 
 export const main_app: FastifyPluginAsync = async (app) => {
   conectDB();
