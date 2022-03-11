@@ -1,11 +1,18 @@
 import React from 'react';
-import Menu from '../components/Menu';
+import { UserProvider } from '@auth0/nextjs-auth0';
 
-const MyApp = () => (
-  <div>
-    <Menu />
-    <h2>Tester</h2>
-  </div>
+import PrimaryLayout from '../components/layouts/PrimaryLayout';
+
+const MyApp = ({
+  Component, pageProps, router, initialUser,
+}) => (
+
+  <UserProvider user={initialUser}>
+    <PrimaryLayout>
+      <main><h1>Tester</h1></main>
+    </PrimaryLayout>
+  </UserProvider>
+
 );
 
 export default MyApp;
