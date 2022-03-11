@@ -9,19 +9,19 @@ type Myrequest = FastifyRequest<{
 export const users_router: FastifyPluginAsync = async (app) => {
   // Get all ingredients
   app.get('/', async () => {
-    const users = await User.find().lean();
-    return users;
+    const custormers = await Customer.find().lean();
+    return custormers;
   });
   // Create a new ingredient
   app.post('/', async (request: Myrequest, reply: FastifyReply) => {
     const { name, quantity } = request.body;
-    const user = new User({ name, quantity });
-    await user.save();
-    return user;
+    const custormers = new Customer({ name, quantity });
+    await custormers.save();
+    return custormers;
   });
   app.get('/:id/delete', async (request: Myrequest, reply: FastifyReply) => {
     const { id } = request.params;
-    await User.findByIdAndDelete(id);
+    await Customer.findByIdAndDelete(id);
     return { status: 'delete' };
   });
 };
